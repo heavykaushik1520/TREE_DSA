@@ -1,43 +1,43 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-typedef struct TreeNode{
-	char data ;
-	struct TreeNode* left;
-	struct TreeNode* right;
-}TreeNode; 
-
-TreeNode* createNewNode(char data)
+typedef struct TreeNode
 {
-	TreeNode* newNode = (TreeNode*)malloc(sizeof(TreeNode));
-	newNode->data = data;
-	newNode->left = NULL;
-	newNode->right = NULL;
-	return newNode;
-	
+    char data;
+    struct TreeNode *left;
+    struct TreeNode *right;
+} TreeNode;
+
+TreeNode *createNewNode(char data)
+{
+    TreeNode *newNode = (TreeNode *)malloc(sizeof(TreeNode));
+    newNode->data = data;
+    newNode->left = NULL;
+    newNode->right = NULL;
+    return newNode;
 }
 
-void inOrderTraversal(TreeNode* root)
+void inOrderTraversal(TreeNode *root)
 {
-	if(root == NULL)
-	return;
-	
-	inOrderTraversal(root->left);
-	printf(" %c , ",root->data);
-	inOrderTraversal(root->right);
+    if (root == NULL)
+        return;
+
+    inOrderTraversal(root->left);
+    printf(" %c , ", root->data);
+    inOrderTraversal(root->right);
 }
 
 void main()
 {
-	TreeNode* root = createNewNode('R');
-    TreeNode* nodeA = createNewNode('A');
-    TreeNode* nodeB = createNewNode('B');
-    TreeNode* nodeC = createNewNode('C');
-    TreeNode* nodeD = createNewNode('D');
-    TreeNode* nodeE = createNewNode('E');
-    TreeNode* nodeF = createNewNode('F');
-    TreeNode* nodeG = createNewNode('G');
-    
+    TreeNode *root = createNewNode('R');
+    TreeNode *nodeA = createNewNode('A');
+    TreeNode *nodeB = createNewNode('B');
+    TreeNode *nodeC = createNewNode('C');
+    TreeNode *nodeD = createNewNode('D');
+    TreeNode *nodeE = createNewNode('E');
+    TreeNode *nodeF = createNewNode('F');
+    TreeNode *nodeG = createNewNode('G');
+
     root->left = nodeA;
     root->right = nodeB;
 
@@ -60,5 +60,4 @@ void main()
     free(nodeD);
     free(nodeA);
     free(root);
-
 }

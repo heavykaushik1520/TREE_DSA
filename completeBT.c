@@ -3,32 +3,34 @@
 #include <string.h>
 
 // Define the TreeNode structure
-typedef struct TreeNode {
+typedef struct TreeNode
+{
     char data[2];
-    struct TreeNode* left;
-    struct TreeNode* right;
+    struct TreeNode *left;
+    struct TreeNode *right;
 } TreeNode;
 
 // Function to create a new tree node
-TreeNode* createTreeNode(const char* data) {
-    TreeNode* newNode = (TreeNode*)malloc(sizeof(TreeNode));
+TreeNode *createTreeNode(const char *data)
+{
+    TreeNode *newNode = (TreeNode *)malloc(sizeof(TreeNode));
     strcpy(newNode->data, data);
     newNode->left = NULL;
     newNode->right = NULL;
     return newNode;
-    
 }
 
-int main() {
+int main()
+{
     // Create nodes
-    TreeNode* root = createTreeNode("R");
-    TreeNode* nodeA = createTreeNode("A");
-    TreeNode* nodeB = createTreeNode("B");
-    TreeNode* nodeC = createTreeNode("C");
-    TreeNode* nodeD = createTreeNode("D");
-    TreeNode* nodeE = createTreeNode("E");
-    TreeNode* nodeF = createTreeNode("F");
-    TreeNode* nodeG = createTreeNode("G");
+    TreeNode *root = createTreeNode("R");
+    TreeNode *nodeA = createTreeNode("A");
+    TreeNode *nodeB = createTreeNode("B");
+    TreeNode *nodeC = createTreeNode("C");
+    TreeNode *nodeD = createTreeNode("D");
+    TreeNode *nodeE = createTreeNode("E");
+    TreeNode *nodeF = createTreeNode("F");
+    TreeNode *nodeG = createTreeNode("G");
 
     // Build the tree
     root->left = nodeA;
@@ -57,4 +59,3 @@ int main() {
 
     return 0;
 }
-
